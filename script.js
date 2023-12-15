@@ -2,6 +2,7 @@ const display = document.querySelector('.display');
 let currentInput = '';
 let firstNumber = null;
 let operator = null;
+let shouldResetInput = false;
 
 function updateDisplay() {
     display.textContent = currentInput;
@@ -9,9 +10,13 @@ function updateDisplay() {
 
 document.querySelectorAll('.button').forEach(button => {
     button.addEventListener('click', () => {
-        const buttonValue = button.textContent; // Use textContent instead of value
+        const buttonValue = button.textContent;
 
         if (!isNaN(buttonValue) || buttonValue === '.') {
+            if (shouldResetInput) {
+                currentInput = '';
+                shouldResetInput = false;
+            }
             currentInput += buttonValue;
         } else if (buttonValue === '=') {
             if (operator !== null) {
@@ -39,6 +44,7 @@ document.querySelectorAll('.button').forEach(button => {
                 operator = null;
                 currentInput = firstNumber.toString();
                 firstNumber = null;
+                shouldResetInput = true;
             }
         } else if (buttonValue === 'C') {
             currentInput = '';
@@ -48,6 +54,7 @@ document.querySelectorAll('.button').forEach(button => {
             if (firstNumber === null) {
                 firstNumber = parseFloat(currentInput);
                 operator = buttonValue;
+                shouldResetInput = true;
             } else {
                 const secondNumber = parseFloat(currentInput);
                 switch (operator) {
@@ -71,6 +78,7 @@ document.querySelectorAll('.button').forEach(button => {
                         break;
                 }
                 operator = buttonValue;
+                shouldResetInput = true;
             }
             currentInput = operator;
         }
