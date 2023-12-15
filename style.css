@@ -1,0 +1,115 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+}
+
+.project-title {
+    margin: 0;
+    padding: 10px;
+}
+
+/* Apply styles to the entire calculator container */
+.calculator {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the display area */
+.display {
+    width: 100%; /* Make it take up the full width of the calculator */
+    padding: 10px;
+    font-size: 24px;
+    text-align: right;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Hide overflow content if it's too long */
+    min-height: 50px; /* Set a minimum height to prevent shrinking */
+}
+
+/* Style the button container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+/* Style calculator buttons, operators, etc. */
+.button {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #ccc;
+    border: 1px solid #999;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #999;
+}
+
+/* Style the clear and equals buttons */
+.clear {
+    grid-column: span 2;
+    background-color: #ff5733;
+    color: white;
+}
+
+.equals {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Style operator buttons differently */
+.operator {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Style the footer */
+.footer {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.footer i {
+    font-size: 24px;
+}
